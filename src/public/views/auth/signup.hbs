@@ -1,0 +1,165 @@
+{{!-- <div class="container p-4">
+  <div class="row">
+    <div class="col-md-4 mx-auto">
+      <div class="card text-center">
+        <div class="card-header">
+          <h3>Sign Up</h3>
+        </div>
+        <div class="card-body">
+          <img src="/img/icon.png" width="100px" class="mx-auto rounded mb-4" alt="">
+          <form action="/signup" method="POST">
+            <div class="form-group">
+              <input
+                id=""
+                type="text"
+                name="fullname"
+                placeholder="Full Name"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                id=""
+                type="text"
+                name="username"
+                placeholder="Username"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                id=""
+                type="password"
+                name="password"
+                placeholder="Password"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group">
+              <button class="btn btn-success btn-block">Sign up</button>
+            </div>
+            <div class="form-group">
+              <a class="" href="/signin">Sign in</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> --}}
+
+
+
+
+<div class="contenido container" id="main_registro">
+    {{!-- <?php require assetsphp("js/general"); ?> --}}
+    <form class="mx-auto text-center px-0 registro " id="registro" 
+    action="/signup" method="POST"
+    >
+        <div class=" my-5">
+            <h2 class="logo right" >{{nameProject}}</h2>
+         
+        </div>
+        <h3>Regístrate...</h3>
+        <small id="respuesta" class="form-text text-muted text-danger"> </small>
+        <div class="mt-4 input-group-sm ">
+            <label for="inputlogin">Usuario</label>
+            <input type="text" id="inputlogin" name="username" class=" form-control m-auto" minlength='5' maxlength="50" required value="liam1">
+            <small id="loginHelpBlock" class="form-text text-muted">
+                Acepta de 5 a 40 carácteres mayúsculas, minúsculas, <br>números, barra baja y arroba(_@)
+            </small>
+        </div>
+        <div class="mt-4 input-group-sm ">
+            <label for="inputPassword5">Contraseña</label>
+            <input type="password" id="inputPassword5" name="password" class="input-sm form-control m-auto" minlength='5' maxlength="25" required value="11111">
+            <small id="passwordHelpBlock" class="form-text text-muted">
+                Acepta de 5 a 20 carácteres mayúsculas, minúsculas, <br>números, y éstos carácteres especiales(_@$%&+)
+            </small>
+        </div>
+        <div class="mt-4 input-group-sm ">
+            <label for="inputrepeatpassword">Repite contraseña</label>
+            <input type="password" id="inputrepeatpassword" name="confirm_password" class="input-sm form-control m-auto" minlength='5' maxlength="25" required value="11111">
+            <small id="repeatpasswordHelpBlock" class="form-text text-muted">
+
+            </small>
+        </div>
+        <div class="mt-4 input-group-sm ">
+            <label for="inputemail">E-mail</label>
+            <input type="email" id="inputemail" name="email" class="input-sm form-control m-auto" required value="liam1@gmail.ert">
+            <small id="emailHelpBlock" class="form-text text-muted">
+
+            </small>
+        </div>
+        <div class="mt-4 input-group-sm ">
+            <label for="inputrepeatemail">Comfirma E-mail</label>
+            <input type="email" id="inputrepeatemail" name="confirm_email" class="input-sm form-control m-auto" required value="liam1@gmail.ert">
+            <small id="respuespta" class="form-text text-muted text-danger">
+
+        </div>
+        <div class="btn-20 mt-4">
+            <input type="submit" class="btn btn-sm " name="register_user" value="Registrate...">
+            <p class=" text-center mb-5">¿Ya tienes cuenta? <a href="/signin">Inicia sesión...</a></p>
+        </div>
+    </form>
+</div>
+{{!-- <?php require assetsphp("js/general"); ?> --}}
+
+
+<style>
+    .registro {
+        padding-top: 13%;
+        padding-bottom: 12%;
+    }
+    .registro div input,
+    .registro div button {
+        width: 25%;
+    }
+
+    @media (max-width: 767px) {
+        .registro {
+            font-size: .9rem;
+        }
+
+        .registro div input,
+        .registro div button {
+            width: 40%;
+        }
+
+    }
+
+    @media (max-width: 380px) {
+        .registro {
+            font-size: .8rem;
+        }
+
+        .registro div input,
+        .registro div button {
+            width: 60%;
+        }
+    }
+
+    @media (max-width: 340px) {}
+</style>
+<script>
+ /*  $(document).ready(function() {
+        let edit = false;
+        $("#registro").submit((e) => {
+            e.preventDefault();
+            //console.log($("#registro").serialize()) 
+            $.ajax({
+                    type: 'POST',
+                    url: "/signup",
+                    data: $("#registro").serialize()
+                })
+                .done(function(res) {
+                    $('#respuesta').append('<div id="resss" class="row col-12 justify-content-center "><p id="reg" style="background:var(--color_third);" class="text-danger rounded p-3 col-md-3 col-8">' + res + '</p></div>')                })
+            $("#registro").trigger("reset");
+            setTimeout(()=>{
+                $("#reg").fadeOut("slow",()=>{
+                    $("#resss").remove()
+                });
+            }, 2500)
+            return false;
+        });
+    });*/
+</script>
