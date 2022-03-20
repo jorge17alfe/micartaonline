@@ -1,82 +1,91 @@
-<div class="container text-center my-5">
-  <a href="/links" class="btn btn-success">GO to Links</a>
-</div>
-<div class="container">
-
-  <form action="profile" method="POST">
-    <div class="text-center">
-      {{!-- <div class="">
-        <h2>Horarios:</h2>
-        {{#each result.schedule}}
-          <div class="col-12">
-            <div class="form-group">
-              <label for=""><input
-                  type="text"
-                  name="schedule[{{@key}}]"
-                  value="{{this}}"
-                />
-              </label>
+<div class="container row mx-auto pl-5 my-5">
+    <section class="col-sm-12 main_presentacion row   ">
+        <!-- entrance title -->
+        <div class="header text-center col-md-12 col-12 pr-0 row">
+            <h3 class=" col-md-12 mb-2  pr-0 font-weight-bold"><?= gretting() ?></h3> <br>
+            <h4 class="  col-md-12 col-12 ">
+                <<< {{result.user_id}} >>>
+            </h4>
+            <p class="col-md-12 text-center pb-4 pr-0 font-weight-bold">{{lenguage.[welcome1]}}</p>
+        </div>
+        <!-- day phase -->
+        <div class="row col-12 justify-content-md-end pr-0">
+            <div class="col-md-6 col-12 text-right pr-0">
+                <?php require helpers('phases'); ?>
+                <?php $aleatorio = rand(0, count($phases) - 1); ?>
+                <p class="  mb-0">"<?= $phases[$aleatorio]['phase'] ?>"</p>
+                <p class=""><cite class=""><small><?= $phases[$aleatorio]['author'] ?> (<?= $phases[$aleatorio]['profession'] ?>)</cite> </small></p>
             </div>
-          </div>
-        {{/each}}
-      </div> --}}
-      <div class="">
-        <h2>Menu text:</h2>
-        {{#each result.menu_text}}
-          <div class="col-12">
-            <div class="form-group">
-              <label for="">
-                <input
-                  type="text"
-                  name="menu_text[{{@key}}]"
-                  value="{{this.[0]}}"
-                />
+        </div>
+        <!-- first paragraph-->
+        <div class="col-12 col-md-6 pt-4 pb-3 border-top border-left">
+            <h3 class="">&nbsp&nbsp&nbsp{{lenguage.[welcome2.1]}}</h3><br>
+            <p class="text-justify">&nbsp&nbsp&nbsp{{lenguage.[welcome2.2]}}<br><br>
+                &nbsp&nbsp&nbsp{{lenguage.[welcome2.3]}}<br><br>
+                &nbsp&nbsp&nbsp{{lenguage.[welcome2.4]}}<br><br>
+            </p>
+        </div>
+        <!-- second paragraph-->
+        <div class="col-12 col-md-6 pt-4 pb-3  border-bottom border-right">
+            <h3 class="">{{lenguage.[welcome3.1]}}</h3>
+            <p class="text-justify mb-0"><br>
+                &nbsp&nbsp&nbsp{{lenguage.[welcome3.2]}}<br> <br>
+                <strong>{{lenguage.[welcome3.3]}}</strong> <br>
+            </p>
+            <p class="mb-0">&nbsp&nbsp&nbsp<strong>1º</strong> {{lenguage.[welcome3.4]}} <a href="/restaurant/editText">__<i class="fas fa-edit fa-lg "></i></a></p>
+            <p class="mb-0">&nbsp&nbsp&nbsp<strong>2º</strong> {{lenguage.[welcome3.5]}} <a href="/restaurant/editImage">__<i class="fas fa-icons fa-lg"></i></a></p>
+            <p class=""> &nbsp&nbsp&nbsp<strong>3º</strong> {{lenguage.[welcome3.6]}}<a class="" type="button" href="/restaurant/editmenudaily">__<i class="fas fa-edit fa-lg "></i>{{lenguage.[welcome3.7]}}</a></p>
+        </div>
+        <!-- template choose -->
+        <div class="col-12 pt-4 ">
+            <h3 class="text-center py-3">4.- {{lenguage.[welcome4.1]}}</h3>
+            {{>add/choosetemplate}}
 
-              </label>
-              {{#each this}}
-                 <label for="">
-                        <input
-                          type="text"
-                          name="menu_text[{{@key}}]"
-                          value="{{[0]}}"
-                        />
-                        <input
-                          type="text"
-                          name="menu_text[{{@key}}]"
-                          value="{{[1]}}"
-                        />
-                        <input
-                          type="text"
-                          name="menu_text[{{@key}}]"
-                          value="{{[2]}}"
-                        />
-                   
-                      </label>
-                {{#each this}}
-                  <div class="col-12">
-                    <div class="form-group">
-                      <label for="">
-                        <input
-                          type="text"
-                          name="menu_text[{{@key}}]"
-                          value="{{this}}"
-                        />
-                   
-                      </label>
-                    </div>
-                  </div>
-                {{/each}}
-              {{/each}}
-            </div>
-          </div>
-        {{/each}}
+            
+              {{> add/lines_aloc}}
+            
+        </div>
+    </section>
 
-      </div>
+    <section class=" col-md-12 col-12 row main-temas pb-4 mt-3 pt-4 border-top">
+       
+              {{> index/qr}}
+        
+    </section>
 
+    <div class="row">
+        
+            {{> add/name-enterprice}}
+        
     </div>
-    <button
-      type="submit"
-      class="btn btn-success btn-block col-md-6 col-8 m-auto"
-    >enviar</button>
-  </form>
 </div>
+
+<style>
+    .main_presentacion div h4 {
+        font-family: var(--letra_londrina);
+        color: var(--color_primary);
+        font-weight: 700;
+        font-size: 3rem;
+    }
+
+    .btn-20 a,
+    .btn-20 button,
+    .btn-20 .btn {
+        border-radius: 4px;
+    }
+
+    @media (max-width: 580px) {
+
+        .main_presentacion div h4 {
+            font-size: 2.5rem;
+        }
+    }
+
+    @media (max-width: 380px) {
+        .main_presentacion div h4 {
+            font-size: 2.2rem;
+        }
+    }
+
+    @media (max-width: 340px) {}
+</style>

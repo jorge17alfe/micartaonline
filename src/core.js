@@ -1,7 +1,7 @@
 const CONFIG = require('./config/config')
 const express = require("express");
 const morgan = require("morgan");
-const viewHbs = require("express-handlebars");
+const { create } = require("express-handlebars");
 const path = require("path");
 const flash = require("connect-flash");
 const session = require("express-session");
@@ -11,25 +11,30 @@ const passport = require('passport')
 
 
 
+
 const { database } = require('./config/keys');
-const router = require("./routes/public");
+const router = require("./routes/routes.public");
 
 // // Initializations
 const app = express();
 require('./lib/passport');
+
+
 // // // Settings
 app.set("port", process.env.PORT || CONFIG.PORT);
 app.set("views", path.join(__dirname, "public/views"));
-app.engine(
-  ".hbs",
-  viewHbs({
-    defaultLayout: "index",
-    layoutsDir: path.join(app.get("views"), "layouts"),
-    partialsDir: path.join(app.get("views"), "partials"),
-    extname: ".hbs",
-    helpers: require("./lib/handlebars"),
-  })
-);
+
+
+// // // settings handlebars
+const hbrs = create({
+  defaultLayout: "index",
+  layoutsDir: path.join(app.get("views"), "layouts"),
+  partialsDir: path.join(app.get("views"), "partials"),
+  extname: ".hbs",
+  helpers: require("./lib/handlebars"),
+})
+
+app.engine(".hbs", hbrs.engine);
 app.set("view engine", ".hbs");
 
 // // // Middlewares
@@ -46,23 +51,22 @@ app.use(express.json());
 app.use(passport.initialize());
 app.use(passport.session())
 
-// // GEt lenguage 
-// app.set((req, res, next) => {
-//   const { chooseLenguage } = require("./lib/lenguage");
-//   chooseLenguage(req)
-//   console.log(chooseLenguage(req))
-//   next()
-// })
+
 
 // // // Global Variables
 // app.use(require("./config/global-variables"))
 app.use((req, res, next) => {
-  console.log(req.url)
-  app.locals.nameProject = CONFIG.NAMEPROJECT;
-  app.locals.admin_b = CONFIG.ADMIN_B;
-  app.locals.name_url = req.url;
+  app.locals.config = CONFIG;
+
+  // // get Lenguaje navegador
+  var idioma = req.acceptsLanguages('en','es')
+  const lenguage = require("./lang/" + idioma)
+  app.locals.lenguage = lenguage;
+
+  app.locals.name_url = req.url.substring(1, req.url.length, -1);
   app.locals.success = req.flash("success");
   app.locals.messageError = req.flash("messageError");
+  // app.locals.optionqr = [100,200,300,400];
   // delete req.user.register_date;
   // delete req.user.connection_last;
   // delete req.user.password;
@@ -70,13 +74,14 @@ app.use((req, res, next) => {
 
 
   app.locals.user = req.user;
-  // console.log(req.user)
   next();
 });
 
 // // // Routes
-app.use(require("./routes/public"));
-app.use(require("./routes/authentication"));
+app.use(require("./routes/routes.public"));
+app.use(require("./routes/routes.authentication"));
+app.use(require("./routes/routes.enterprice"));
+app.use(require("./routes/routes.admin"));
 // app.use("/links", require("./routes/links"));
 
 // // // Public

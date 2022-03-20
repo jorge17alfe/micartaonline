@@ -16,9 +16,7 @@ passport.use(
       const rows = await pool.query("SELECT * FROM tb_user_pass WHERE username = ?", [username]);
       if (rows.length > 0) {
         const user = rows[0];
-        // console.log(user)
         const validPass = await helpers.matchPassword(password, user.password);
-        // console.log(validPass)
         if (validPass) {
           done(null, user, req.flash('success', "Welcome " + user.username));
         } else {

@@ -1,150 +1,47 @@
-{{!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container">
-      
-    <a class="navbar-brand logo" ><img src="/img/icon.png" width="80px" alt="" class=" mx-auto"/></div></a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="/">Home
-            <span class="sr-only">(current)</span></a>
-        </li>
-    
-    
-       {{#if user}}
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="navbarDropdown"
-            role="button"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            See
-          </a>
-          <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
-            <a class="nav-link text-primary" href="/links">LINKS</a>
-            <a class="nav-link text-primary" href="/links/add">+ one</a>
-          </div>
-        </li>
-            <li class="nav-item active">
-          <a class="nav-link" href="/profile">Profile
-            <span class="sr-only">(current)</span></a>
-        </li>
-        </li>
-            <li class="nav-item active">
-          <a class="nav-link" href="/logout">Log out
-            <span class="sr-only">(current)</span></a>
-        </li>
-       {{else}}
-           <li class="nav-item active">
-          <a class="nav-link" href="/signin">Sign In
-            <span class="sr-only">(current)</span></a>
-        </li>
-            <li class="nav-item active">
-          <a class="nav-link" href="/signup">Sign up
-            <span class="sr-only">(current)</span></a>
-        </li>
-       {{/if}}
-      </ul>
-    </div>
 
-  </div>
-</nav>
-<div class="bg-light" style="height:150px; top:-100px">
-  <div class="text-center">
-      <h1 class=" mx-auto">{{nameProject}}</h1>
-       <h2 class=" mx-auto">
-         Welcome  {{#if user.user}}{{user.user}}{{else}}User{{/if}}
-       </h2>
-</div>
-</div> --}}
 
 <div class="container-fluid main-header fixed-top main_base pr-0">
   <header class="px-0 w-100">
 
     <nav class="navbar navbar-expand-lg px-0 navegacion">
       <div class="logo">
-        <a class="navbar-brand" href="/">{{nameProject}}</a>
+        <a class="navbar-brand" href="/">{{config.NAMEPROJECT}}</a>
       </div>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav w-100 d-flex justify-content-end pr-4">
 
-          {{! <?php
-                        if (!isset($_GET["url"])) {
-                        ?>
-                        <?php
-                        } else { ?>}}
+        
           <li class="nav-item pl-lg-3">
             <a class="nav-link" href="/">
-              <!-- <i class="fa fa-home" aria-hidden="true"></i> -->
               Home
             </a>
           </li>
-          {{!  <?php
-                        } }}
-
-          {{! // include "menutemplate.php"; }}
-          {{! viewadd('includes/add/menutemplate', ['', '']) }}
-          {{! ?>
-                        <?php if (!isset($_SESSION["usuario"])) { ?>
-                        <?php } else { ?> }}
           {{#if user}}
             <li class="nav-item pl-lg-3">
               <a class="nav-link" href="/profile">
-                <!-- <i class="fas fa-user"></i> -->
-                {{! Usuario }}
                 Profile
               </a>
             </li>
           {{/if}}
-          {{! <?php } ?>
-                        
-                        <?php if (isset($_SESSION["usuario"]) && $_SESSION["usuario"] === config('admin')) { ?> }}
           {{#if user}}
             <li class="nav-item pl-lg-3">
               <a class="nav-link" href="/admin">
-                <!-- <i class="fas fa-lock"></i> -->
                 Admin
               </a>
             </li>
           {{/if}}
-          {{! <?php  } ?> }}
-
           {{#if user}}
-            {{! <?php if (!isset($_SESSION["usuario"])) { ?> }}
             <li class="nav-item pl-lg-3">
               <a class="nav-link pr-0" id="restaurante" href="/logout"><i
                   class="fas fa-sign-out-alt 2x"
                 ></i></a>
             </li>
           {{else}}
-            {{! <?php } else { ?> }}
-            {{! <?php } ?> }}
-            {{!-- <li class="nav-item pl-lg-3">
-              <a class="nav-link pr-0" id="restaurante" href="/signup"><i
-                  class="fas fa-user-plus"
-                ></i></a>
-            </li> --}}
             <li class="nav-item pl-lg-3">
               <a class="nav-link pr-0" id="restaurante" href="/signin"><i
-                  class="fas fa-sign-in-alt 2x"
-                ></i></a>
-            {{!-- </li> --}}
-
+                  class="fas fa-sign-in-alt 2x"></i></a>
+            </li>
           {{/if}}
 
         </ul>

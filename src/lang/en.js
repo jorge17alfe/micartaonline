@@ -1,20 +1,20 @@
 const CONFIG = require('../config/config')
 module.exports = {
-    'title'                : "MI CARTA ONLINE",
+    'title'                : CONFIG.NAMEPROJECT,
     'subtitle'             : "Web and digital menu",
-    'aboutus'              : 'Quienes somos',
-    'privacy-politic'      : 'Politica privacidad',
-    'cookies-politic'      : 'Politica de cookies',
-    'legal-notice'         : 'Aviso legal',
+    'aboutus'              : 'Who are us...?',
+    'privacy-politic'      : 'Privacy politic',
+    'cookies-politic'      : 'Cookies polotic',
+    'legal-notice'         : 'Legal notice',
   
     // --------------BUTTON---------------
     'home'                 : 'Home',
     'design'               : 'Diseño',
-    'available'            : 'Contacto',
-    'btn-register'         : 'REGÍSTRATE',
-    'btn-send'             : 'ENVIAR',
-    'btn-public'           : 'PUBLICAR',
-    'btn-see-more'         : 'VER MÁS',
+    'available'            : 'Contact',
+    'btn-register'         : 'REGISTER',
+    'btn-send'             : 'SEND',
+    'btn-public'           : 'TO POST',
+    'btn-see-more'         : 'SEE MORE',
     'email-info'           : CONFIG.email_info,
   
     //   ---------------INDEX--------------
@@ -46,22 +46,22 @@ module.exports = {
     'index5.2'             : 'Grande para colocarlo en la entrada de tu local.&nbsp Medianos y pequeños para tus mesas como tu lo quieras y donde lo quieras.',
     'index5.3'             : 'Y tus clientes a escanear QR code...',
   
-    'index6'               : 'Diseño resposive',
+    'index6'               : 'Resposive design',
     'index6.1'             : 'Tienes para escoger entre nuestros diseños de momento 4 en el futuro  más..',
     'index6.2'             : 'Tienes para escoger entre nuestros diseños de momento 4 en el futuro  más..',
     'index6.3'             : 'Tienes para escoger entre nuestros diseños de momento 4 en el futuro  más..',
   
   
     //  -----------------FORMS-----------------
-    'index10'              : ' Escríbenos...',
-    'index10.1'            : 'Déjanos tus sugerencias ó pide información.',
+    'index10'              : 'Write us...',
+    'index10.1'            : 'Leave us your suggestions or request information.',
   
-    'index11.1'            : 'Déjanos tu comentario',
-    'index11.2'            : 'Comentarios de nuestros usuarios',
-    'index11.4'            : '* El e-mail no se mostrará',
+    'index11.1'            : 'Leave it your comment',
+    'index11.2'            : 'Comments from our users',
+    'index11.4'            : '* E-mail no will show',
   
     // ------------BIENVENIDO------------
-    'welcome1'             : 'Recibe un cordial saludo de todo el equipo que conformamos',
+    'welcome1'             : 'Receive a cordial greeting from the entire team that we make up',
   
     'welcome2.1'           : 'Web y carta para tu negocio.',
     'welcome2.2'           : 'Empieza aquí paso a paso descubriendo nuestra web.',

@@ -4,11 +4,9 @@
     DEVELOPER:"jlom.code",
     ADMIN_A:"Jorge Ordóñez",
     ADMIN_B:"Magaly Cordova",
+    NIF:"54*****Y",
     email_info:"info@micartaonline.es",
-    DB:{
-        host:'localhost',
-        user:'root',
-        password :'',
-        database : 'db_micartaonline' 
-    }
+    SERVERURL: "http://localhost:"+5000+"/",
+    stringbackcolor:"#ffffff",
+    stringfrontcolor:"#5E339F"
 }

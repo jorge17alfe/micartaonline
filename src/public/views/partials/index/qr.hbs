@@ -1,0 +1,134 @@
+<link rel="stylesheet" href="/colorpicker/style.css" />
+<link rel="stylesheet" href="/colorpicker/bootstrap-colorpicker.min.css" />
+<div class="row pt-2" id="code_qr">
+  <h3 class="col-sm-12 text-center mb-3">5.- {{lenguage.qrtitle}}</h3>
+  <div class="col-md-8">
+    <p>&nbsp&nbsp&nbsp{{lenguage.[qr1.1]}}<br />
+      <br />
+      &nbsp&nbsp&nbsp
+      {{lenguage.[qr1.2]}}</p>
+
+    <div class="row">
+      <form id="getqr">
+        <input type="hidden" name="user_id" value="{{result.user_id}}" />
+        <input type="hidden" name="web_name" value="{{result.web_name}}" />
+        <div class="col-sm-12 my-4">
+          <div class="row">
+            <div class="col-6 col-md-3">
+              <label><strong>{{lenguage.background}}</strong></label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text getcol"><i
+                      class="fa fa-qrcode fa-lg"
+                    ></i></span>
+                </div>
+                <input
+                  type="text"
+                  class="form-control colorpickerback"
+                  data-format="hex"
+                  value="{{config.stringbackcolor}}"
+                  name="backcolor"
+                />
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <label><strong>{{lenguage.foreground}}</strong></label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text getcol"><i
+                      class="fa fa-qrcode fa-lg"
+                    ></i></span>
+                </div>
+                <input
+                  type="text"
+                  class="form-control colorpickerfront"
+                  data-format="hex"
+                  value="{{config.stringfrontcolor}}"
+                  name="frontcolor"
+                />
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <label><strong>{{lenguage.size}}</strong></label>
+              <select name="size" class="custom-select">
+                <option value="200">200</option>
+                <option value="400">400</option>
+                <option value="600">600</option>
+                <option value="800">800</option>
+              </select>
+            </div>
+            <div class="col-6 col-md-3">
+              <label><strong
+                >{{lenguage.error_correction_level}}</strong></label>
+              <select name="level" class="custom-select">
+                <option value="L">
+                  {{lenguage.precition_l}}
+                </option>
+                <option value="M">
+                  {{lenguage.precition_m}}
+                </option>
+                <option value="Q">
+                  {{lenguage.precition_q}}
+                </option>
+                <option value="H">
+                  {{lenguage.precition_h}}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        {{! <input type="submit" class="btn btn-outline-secondary"  value="Get QR"> }}
+      </form>
+
+      <div>
+        {{! <input type="button" id="getqr" value="Get QR"> }}
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+
+    <div class="placeresult btn-20 text-center">
+      <div class="form-group text-center wrapresult">
+        <div class="resultholder">
+          <img class="img-fluid" src="img/qr/placeholder.svg" />
+          <div class="infopanel"></div>
+        </div>
+      </div>
+      <div class="preloader"><i class="fa fa-cog fa-spin"></i></div>
+      <div class="form-group text-center linksholder"></div>
+      <button class="btn btn-lg ellipsis" id="submitcreate">
+        <i class="fa fa-magic"></i>
+        {{lenguage.generate_qrcode}}
+      </button>
+    </div>
+  </div><!-- col sm4-->
+  <div id="link_enterprice" class="text-center col-12 pt-5">
+
+  </div>
+</div>
+
+<script>
+
+  {{! $("#getqr").on("submit", (e)=>{
+        e.preventDefault()
+        getQR();
+    })
+    function getQR() {
+        $.post({
+                url: "/getqr",
+                data:$("#getqr").serialize()
+            })
+            .done((res) => {
+                $(".img-fluid").attr("src",`/users/${res.user_id}/qr/qr${res.logo[0]}`)
+              
+            })
+    } }}
+</script>
+
+
+<script src="/js/colorpicker/jquery-3.2.1.min.js"></script>
+<script src="/js/colorpicker/popper.js"></script>
+<script src="/js/colorpicker/bootstrap-colorpicker.min.js"></script>
+<script src="/js/colorpicker/qrjs.js"></script>

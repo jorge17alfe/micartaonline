@@ -1,6 +1,6 @@
 <article class="politica-primacidad container  text-justify py-5 pl-5 pr-3">
-    <h4>POLÍTICA DE PRIVACIDAD</h4><br>
-    <p>Si estás aquí es porque quieres saber más sobre las obligaciones y derechos que te corresponden como usuario de esta web https://alocraise.com y eso está muy bien. Nuestro deber es informarte y el tuyo estar debidamente informado.
+    <h4 style="text-transform:uppercase;">{{lenguage.[privacy-politic]}}</h4><br>
+    <p>Si estás aquí es porque quieres saber más sobre las obligaciones y derechos que te corresponden como usuario de esta web <a href="/">{{config.SERVERURL}}</a> y eso está muy bien. Nuestro deber es informarte y el tuyo estar debidamente informado.
         <br><br>
         En esta Política de Privacidad te informaremos con total transparencia sobre la finalidad de este sitio web y todo lo que afecta a los datos que nos facilites, así como de las obligaciones y derechos que te corresponden.
         <br><br>
@@ -15,14 +15,14 @@
         La LSSI (Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y Comercio Electrónico) que regula las transacciones económicas mediante medios electrónicos, como es el caso de este blog.
     </p><br><br>
     <h5>DATOS DE IDENTIFICACIÓN</h5> <br>
-    <p>El responsable y titular de este sitio web es <strong><?= config('autor-name') . ' ' . config('autor-surname') ?>.</strong>
+    <p>El responsable y titular de este sitio web es <strong>{{config.ADMIN_A}}</strong>
         <br>
-        <strong>Nombre</strong>: <?= config('autor-name') . ' ' . config('autor-surname') ?><br>
-        <strong>NIF</strong>: <?= config('nif') ?><br>
+        <strong>Nombre</strong>: {{config.ADMIN_A}}<br>
+        <strong>NIF</strong>: {{config.NIF}}<br>
         <!-- <strong> Domicilio Social</strong>: C/ FELIP II, 279-281. 08016-BARCELONA <br> -->
         <strong> Actividad del sitio web</strong>: distribución de contenido relacionado con web online, muestra de publicidad, y recomendación de productos de afiliado. <br>
-        <strong> Correo electrónico</strong>: <?= config('email-info') ?> <br> <br>
-        Los datos que nos facilites con tu consentimiento, y de acuerdo al uso establecido en esta Política de Privacidad, serán incorporados a un fichero automatizado debidamente inscrito en la Agencia Española de Protección de Datos, en el que el responsable de dicho fichero es: <?= SERVERURL ?>. Esto quiere decir que tus datos están seguros, de acuerdo a lo que establece la ley.
+        <strong> Correo electrónico</strong>: {{lenguage.[email-info]}} <br> <br>
+        Los datos que nos facilites con tu consentimiento, y de acuerdo al uso establecido en esta Política de Privacidad, serán incorporados a un fichero automatizado debidamente inscrito en la Agencia Española de Protección de Datos, en el que el responsable de dicho fichero es: /. Esto quiere decir que tus datos están seguros, de acuerdo a lo que establece la ley.
         <br>
         Los datos personales que nos facilites, siempre con tu consentimiento expreso, se almacenarán y tratarán con los fines previstos y descritos a continuación en esta Política de Privacidad, hasta el momento en que nos pidas que los eliminemos.<br><br>
         Te informamos de que esta Política de Privacidad puede ser modificada en cualquier momento, con el fin de adaptarla a novedades legislativas o cambios en nuestras actividades, siendo vigente la que en cada momento se encuentre publicada en la web. Dicha modificación se te notificará antes de su aplicación.
@@ -45,7 +45,7 @@
         Para enviarte comunicaciones comerciales o publicitarias a través de cualquier otro medio electrónico o físico, que posibilite realizar comunicaciones.
         Estas comunicaciones, siempre serán relacionadas con nuestros productos, servicios, novedades o promociones, así como aquellos productos o servicios que podamos considerar de tu interés y que puedan ofrecer colaboradores, empresas o “partners” con los que mantengamos acuerdos de promoción o colaboración comercial.
         <br><br>
-        De ser así, te garantizamos que estos terceros nunca tendrán acceso a tus datos personales, con las excepciones reflejadas a continuación, siendo en todo caso estas comunicaciones realizadas por parte de <?= SERVERURL ?>, como titular de la web.
+        De ser así, te garantizamos que estos terceros nunca tendrán acceso a tus datos personales, con las excepciones reflejadas a continuación, siendo en todo caso estas comunicaciones realizadas por parte de /, como titular de la web.
         <br><br>
         Este sitio web muestra productos de afiliado de terceros. Concretamente de AMAZON.
         <br><br>
@@ -53,22 +53,22 @@
         <br><br>
         En este caso, debes saber que únicamente proporcionamos y facilitamos los enlaces a las páginas y/o plataformas de estos terceros donde pueden adquirirse los productos que mostramos, en aras a facilitar la búsqueda y fácil adquisición de los mismos.
         <br><br>
-        Estas páginas enlazadas y pertenecientes a terceros no han sido revisadas ni son objeto de controles, ni recomendación por nuestra parte, por lo que en ningún caso <?= SERVERURL ?> será considerada responsable de los contenidos de estos sitios web, de las responsabilidades derivadas de su uso en todos los ámbitos, ni por las medidas que se adopten relativas a la privacidad del usuario, tratamiento de sus datos de carácter personal u otras que pudieran establecerse.
+        Estas páginas enlazadas y pertenecientes a terceros no han sido revisadas ni son objeto de controles, ni recomendación por nuestra parte, por lo que en ningún caso / será considerada responsable de los contenidos de estos sitios web, de las responsabilidades derivadas de su uso en todos los ámbitos, ni por las medidas que se adopten relativas a la privacidad del usuario, tratamiento de sus datos de carácter personal u otras que pudieran establecerse.
         <br><br>
         Por todo ello, te recomendamos la lectura detenida y anticipada de todas las condiciones de uso, condiciones de compra, políticas de privacidad, avisos legales y/o similares de estos sitios enlazados antes de proceder a la adquisición de estos productos o uso de las webs.
     </p>
     <br><br>
     <h5>EXACTITUD Y VERACIDAD DE LOS DATOS</h5><br>
-    <p>Como usuario, eres el único responsable de la veracidad y modificación de los datos que remitas a <?= SERVERURL ?>, exonerándonos de cualquier responsabilidad al respecto.
+    <p>Como usuario, eres el único responsable de la veracidad y modificación de los datos que remitas a /, exonerándonos de cualquier responsabilidad al respecto.
         <br><br>
         Es decir, a ti te corresponde garantizar y responder en cualquier caso de la exactitud, vigencia y autenticidad de los datos personales facilitados, y te comprometes a mantenerlos debidamente actualizados.
         <br><br>
         De acuerdo a lo expresado en esta Política de Privacidad, aceptas proporcionar información completa y correcta en el formulario de contacto o suscripción.
     </p><br><br>
     <h5>BAJAS DE SUSCRIPCIÓN Y DERECHO DE REVOCACIÓN</h5><br>
-    <p>Como titular de los datos que nos hayas facilitado, podrás ejercer en cualquier momento tus derechos de acceso, rectificación, cancelación y oposición, enviándonos un correo electrónico a <?= config('email-info') ?> y adjuntándonos una fotocopia de tu documento de identidad como prueba válida.
+    <p>Como titular de los datos que nos hayas facilitado, podrás ejercer en cualquier momento tus derechos de acceso, rectificación, cancelación y oposición, enviándonos un correo electrónico a {{lenguage.[email-info]}} y adjuntándonos una fotocopia de tu documento de identidad como prueba válida.
         <br><br>
-        Igualmente, podrás darte de baja en cualquier momento para dejar de recibir nuestra newsletter o cualquier otra comunicación comercial, directamente desde el mismo email que hayas recibido o enviándonos un correo a <?= config('email-info') ?>.
+        Igualmente, podrás darte de baja en cualquier momento para dejar de recibir nuestra newsletter o cualquier otra comunicación comercial, directamente desde el mismo email que hayas recibido o enviándonos un correo a {{lenguage.[email-info]}}.
     </p>
     <br><br>
     <h5>ACCESO A DATOS POR CUENTA DE TERCEROS</h5><br>
@@ -103,11 +103,11 @@
         <br><br>
         Al utilizar esta web, consientes el tratamiento de datos por parte de Google en la forma y para los fines indicados.
         <br><br>
-        Si quieres saber más sobre el uso de cookies y las prácticas de recopilación de información y los procedimientos de aceptación o rechazo, consulta nuestra <a href="<?= SERVERURL ?>politica-cookies">POLÍTICA DE COOKIES</a>.
+        Si quieres saber más sobre el uso de cookies y las prácticas de recopilación de información y los procedimientos de aceptación o rechazo, consulta nuestra <a href="/politica-cookies">POLÍTICA DE COOKIES</a>.
     </p><br><br>
     <h5>MEDIDAS DE SEGURIDAD</h5><br>
-    <p>Como titular de la web, <?= SERVERURL ?> ha adoptado todas las medidas técnicas y de organización necesaria para garantizar la seguridad e integridad de los datos de carácter personal que trate, así como para evitar su pérdida, alteración y/o acceso por parte de terceros no autorizados.
+    <p>Como titular de la web, / ha adoptado todas las medidas técnicas y de organización necesaria para garantizar la seguridad e integridad de los datos de carácter personal que trate, así como para evitar su pérdida, alteración y/o acceso por parte de terceros no autorizados.
         <br><br>
-        Te recordamos que, para más información, puedes consultar nuestras páginas de <a href="<?= SERVERURL ?>aviso-legal">AVISO LEGAL</a> y <a href="<?= SERVERURL ?>politica-cookies">POLÍTICA DE COOKIES</a>.
+        Te recordamos que, para más información, puedes consultar nuestras páginas de <a href="/aviso-legal">AVISO LEGAL</a> y <a href="/politica-cookies">POLÍTICA DE COOKIES</a>.
     </p>
 </article>

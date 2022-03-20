@@ -2,7 +2,7 @@ const localsModels = {}
 
 localsModels.getDataUser = async (user, table) => {
     try {
-        const result = await require("../model/model-consult");
+        const result = await require("./model.consult");
         return result.getDataUser(user, table) ;
         
     } catch (error) {

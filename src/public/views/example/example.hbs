@@ -1,0 +1,36 @@
+<div class="container py-5">
+    <h3>Example 2</h3>
+    <div id="root" class="py-5">
+
+    </div>
+    {{!-- <button id="exampleBtn" class="btn btn-outline-success">Receive data</button> --}}
+</div>
+
+<script>
+ $(document).ready(()=>
+
+  
+        $.get({
+            url:"/profile",
+        })
+        .done((res)=>{
+
+        for(ele in res){
+           for(ele2 in res[ele]){
+            if(ele2=== "qrcode"){
+            $("#root").append(`<p>${ele2} <span class="text-danger">==>></span> <img src="${res[ele][ele2]}"></p>`)
+            }else{
+            $("#root").append(`<p>${ele2} <span class="text-danger">==>></span> <i>${res[ele][ele2]}</i></p>`)
+            }
+        }
+        }
+            
+
+
+        })
+   
+
+) 
+
+
+</script>

@@ -1,4 +1,5 @@
 const bcrypt = require("bcryptjs");
+const { Result } = require("express-validator");
 const helpers = {};
 
 helpers.encryptPassword = async (password) => {
@@ -19,12 +20,13 @@ helpers.confirmElements = async (element_a, element_b) => {
   try {
     if (element_a === element_b) return true
     return false
-      
-   
+
+
   } catch (e) {
     console.log(e)
   }
 }
+
 
 
 module.exports = helpers;

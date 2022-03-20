@@ -1,11 +1,11 @@
 const CONFIG = require('../config/config')
 module.exports = {
     'title'                : CONFIG.NAMEPROJECT,
-    'subtitle'             : "Web y carta digital",
-    'aboutus'              : 'Quienes somos...?',
-    'privacy-politic'      : 'Política privacidad',
-    'cookies-politic'      : 'Política de cookies',
-    'legal-notice'         : 'Aviso legal',
+    'subtitle'             : "Web et carte numérique",
+    'aboutus'              : 'Qui sommes nous...?',
+    'privacy-politic'      : 'Politique de confidentialité',
+    'cookies-politic'      : 'Politique de cookies',
+    'legal-notice'         : 'Avis juridique',
   
     // --------------BUTTON---------------
     'home'                 : 'Home',
@@ -18,7 +18,7 @@ module.exports = {
     'email-info'           : CONFIG.email_info,
   
     //   ---------------INDEX--------------
-    'index1'               : 'Web para tu negocio de hostelería.',
+    'index1'               : 'Web et lettre pour votre entreprise..',
     'index1.1'             : 'Has llegado hasta aquí, hoy es tu día de suerte y te darás cuenta ¿El porque?.',
     'index1.2'             : 'Te presentamos esta web como una solución para ti como el responsable, jefe, dueño y principalmente lider tu equipo. Pensado en la comodidad de tu restaurante, bar, cafetería, chiringuito y todo lo que tenga que ver con hostelería. Todos los negocios de hostelería tienen derecho ya a estar presentes en internet, sean pequeños, medianos o grandes negocios.',
     'index1.3'             : 'Hacer conocer al mundo que tù tambien ya estas presente a un click desde cualquier parte del mundo.',
@@ -61,7 +61,7 @@ module.exports = {
     'index11.4'            : '* El e-mail no se mostrará',
   
     // ------------BIENVENIDO------------
-    'welcome1'             : 'Recibe un cordial saludo de todo el equipo que conformamos',
+    'welcome1'             : 'Recevez les salutations cordiales de toute l`équipe que nous formons',
   
     'welcome2.1'           : 'Web y carta para tu negocio.',
     'welcome2.2'           : 'Empieza aquí paso a paso descubriendo nuestra web.',
