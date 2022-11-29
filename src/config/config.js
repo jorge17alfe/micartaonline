@@ -6,7 +6,8 @@
     ADMIN_B:"Magaly Cordova",
     NIF:"54*****Y",
     email_info:"info@micartaonline.es",
+    // SERVERURL: "https://micartaonlinenodejs.alocraise.com/",
     SERVERURL: "http://localhost:"+5000+"/",
     stringbackcolor:"#ffffff",
-    stringfrontcolor:"#5E339F"
+    stringfrontcolor:"#2733a5"
 }

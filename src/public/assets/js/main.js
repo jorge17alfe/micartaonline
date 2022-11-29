@@ -234,7 +234,7 @@ function getComment(data = 2) {
         .done(function (response) {
             const comments = JSON.parse(response);
             // console.log(comments.length);
-            console.log(comments);
+            // console.log(comments);
             if (comments !== false) {
                 if (data == 2) {
                     $(".delete_comment").remove();

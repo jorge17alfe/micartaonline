@@ -66,12 +66,6 @@ app.use((req, res, next) => {
   app.locals.name_url = req.url.substring(1, req.url.length, -1);
   app.locals.success = req.flash("success");
   app.locals.messageError = req.flash("messageError");
-  // app.locals.optionqr = [100,200,300,400];
-  // delete req.user.register_date;
-  // delete req.user.connection_last;
-  // delete req.user.password;
-  // delete req.user.email;
-
 
   app.locals.user = req.user;
   next();

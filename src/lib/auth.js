@@ -12,5 +12,13 @@ module.exports ={
         }
         return res.redirect('/profile')
         
+    },
+    isLoggedInAdmin(req, res , next){
+        if(req.user.username == "jorge"){
+            return next();
+        }
+        return res.redirect('/profile')
+       
+        
     }
 }

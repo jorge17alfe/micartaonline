@@ -4,10 +4,23 @@ const config = require("../config/config");
 const { stringify } = require("querystring");
 
 enterprice.profile = async (req, res) => {
-    const result = await enterprice.getDataUser(req, res);
+    const result = enterprice.getDataUser(req, res);
     res.render("user/profile", { result });
 }
-enterprice.getDatas = async (req,res)=>{
+enterprice.editDaymenu = async (req, res) => {
+    const result = enterprice.getDataUser(req, res);
+    res.render("user/edit-day-menu", { result });
+}
+enterprice.editImages = async (req, res) => {
+    const  result = await enterprice.getDataUser(req, res);
+    console.log(result)
+    res.render("user/edit-images", { result });
+}
+enterprice.editTexts = async (req, res) => {
+    const result = enterprice.getDataUser(req, res);
+    res.render("user/edit-texts", { result });
+}
+enterprice.getDatas = async (req, res) => {
     const result = await enterprice.getDataUser(req, res);
     res.send(result)
 }
@@ -15,17 +28,23 @@ enterprice.getDataUser = async (req, res) => {
     const data = await consult.getDataUser(req.user.username, "tb_user_data_enterprice")
     const menu = await consult.getDataUser(req.user.username, "tb_menu_day")
     const dataReturned = { ...data, ...menu };
-    const result =getDataDeserialize(dataReturned)
+    const result = getDataDeserialize(dataReturned)
     return result;
 }
 enterprice.getQr = async (req, res) => {
-    const getQR = require('../lib/qrcode');
+    const { getQR } = require('../lib/qrcode');
     const result = await enterprice.getDataUser(req, res)
     console.log(req.body)
     var size = parseInt(req.body.size)
 
-    const sendobject = await getQR(config.SERVERURL+result.web_name,result.user_id,result.logo[0], "qr"+result.logo[0], size, req.body.frontcolor)
-    res.send(result)
+    const sendobject = await getQR(req.body.web_name, req.body.user_id, req.body.logo, "QR" + req.body.logo, size, req.body.frontcolor, req.body.backcolor)
+    res.send(sendobject)
+}
+enterprice.deleteQr = async (req, res) => {
+    const { deleteQR } = require('../lib/qrcode');
+    // console.log(req.body.qrnamePhoto);
+    const sendobject = await deleteQR(req.body.userId, req.body.qrnamePhoto);
+    res.send(sendobject);
 }
 
 const getDataDeserialize = (data) => {
