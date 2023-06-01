@@ -8,7 +8,8 @@ enterprice.profile = async (req, res) => {
     res.render("user/profile", { result });
 }
 enterprice.editDaymenu = async (req, res) => {
-    const result = enterprice.getDataUser(req, res);
+    const result =  await enterprice.getDataUser(req, res);
+    // console.log(result)
     res.render("user/edit-day-menu", { result });
 }
 enterprice.editImages = async (req, res) => {
@@ -17,7 +18,8 @@ enterprice.editImages = async (req, res) => {
     res.render("user/edit-images", { result });
 }
 enterprice.editTexts = async (req, res) => {
-    const result = enterprice.getDataUser(req, res);
+    const result = await enterprice.getDataUser(req, res);
+    // console.log(result)
     res.render("user/edit-texts", { result });
 }
 enterprice.getDatas = async (req, res) => {
@@ -29,6 +31,7 @@ enterprice.getDataUser = async (req, res) => {
     const menu = await consult.getDataUser(req.user.username, "tb_menu_day")
     const dataReturned = { ...data, ...menu };
     const result = getDataDeserialize(dataReturned)
+    // console.log(result)
     return result;
 }
 enterprice.getQr = async (req, res) => {

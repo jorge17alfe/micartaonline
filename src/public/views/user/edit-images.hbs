@@ -1,4 +1,22 @@
 <div class="container row mx-auto pl-5 my-5">
   <h1>Images edit</h1>
-  <p>{{result}}</p>
+  <div>
+    
+    {{#each result.menu_text}}
+      <p><b>{{this.[0]}}</b></p>
+       
+       
+        {{#each this.[1]}}
+            <p><span>{{@key}} ==> {{this}}</span></p>
+          {{else}}
+            <p>vacio</p>
+        {{/each}}
+        
+
+        
+
+
+    {{/each}}
+
+  </div>
 </div>

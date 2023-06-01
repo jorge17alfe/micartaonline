@@ -2,8 +2,15 @@
   <h1>Text Menu</h1>
   <div>
     {{#each result }}
-        <p>  <span>{{.}} =>  => {{lookup ../menu_text }}</span></p>
+        <p>  <span>{{.}}</span></p>
+      {{#each this }}
+        <p>  <span>{{.}}</span></p>
      
+        {{#each this }}
+        <p>  <span>{{.}}</span></p>
+     
+        {{/each}}
+      {{/each}}
     {{/each}}
 </div>
 </div>

@@ -71,7 +71,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// // // Routes
+ // // Routes
 app.use(require("./routes/routes.public"));
 app.use(require("./routes/routes.authentication"));
 app.use(require("./routes/routes.enterprice"));
