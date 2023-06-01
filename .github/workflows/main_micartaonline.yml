@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'micartaonline'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B5DE3B9CDE67478980C9AADC42C93971 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C01DFEEB17AD4DD38B4BFC6B50E53A09 }}
           package: .
